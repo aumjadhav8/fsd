@@ -1,0 +1,22 @@
+python manage.py shell
+
+from app.models import student, course
+
+# Create courses
+course1 = course.objects.create(courseCode='CS101', courseName='Introduction to Computer Science', courseCredits=4)
+course2 = course.objects.create(courseCode='CS102', courseName='Data Structures', courseCredits=3)
+course3 = course.objects.create(courseCode='CS103', courseName='Algorithms', courseCredits=3)
+
+# Create students
+student1 = student.objects.create(usn='USN001', name='Alice Smith', sem=2)
+student2 = student.objects.create(usn='USN002', name='Bob Brown', sem=4)
+student3 = student.objects.create(usn='USN003', name='Charlie Johnson', sem=6)
+student4 = student.objects.create(usn='USN004', name='Diana Lee', sem=2)
+student5 = student.objects.create(usn='USN005', name='Evan Davis', sem=4)
+
+# Enroll students in courses
+student1.courses.add(course1, course2)
+student2.courses.add(course2, course3)
+student3.courses.add(course1, course3)
+student4.courses.add(course2)
+student5.courses.add(course1)
