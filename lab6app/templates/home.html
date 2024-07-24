@@ -1,7 +1,11 @@
 {% extends 'basicTemplate.html' %}
+
 {% block title %} Home Page {% endblock %}
+
 {% block content %}
-<li>Click on Student List to get the List of students</li>
-<li> Click on Course List to get the list of courses</li>
-<li>click on register to enroll student to a course</li>
+    <ul>
+        <li>Click on <a href="/studentlist/">Student List</a> to get the list of students.</li>
+        <li>Click on <a href="/courselist/">Course List</a> to get the list of courses.</li>
+        <li>Click on <a href="/register/">Register</a> to enroll a student in a course.</li>
+    </ul>
 {% endblock %}
